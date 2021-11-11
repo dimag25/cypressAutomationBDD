@@ -6,6 +6,7 @@ pipeline {
             parallel {
                 stage('tester A') {
                     steps {
+                        bat 'npm install'
                         bat 'npm run cy:run:dashboard'
                     }
                 }
