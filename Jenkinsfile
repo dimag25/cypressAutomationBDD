@@ -1,9 +1,8 @@
 
-/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
     stages {
-        stage('build') {
+         stage('build') {
                     steps {
                         bat 'npm install'
                     }
@@ -22,14 +21,15 @@ pipeline {
                         bat 'npm run cy:run:dashboard'
                     }
                 }
-                stage('tester C') {
+                  stage('tester C') {
                     steps {
                         bat 'npm run cy:run:dashboard'
                     }
                 }
             }
+        }
 
-                stage('allure-reports') {
+        stage('allure-reports') {
                         steps {
                     script {
                             allure([
