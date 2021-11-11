@@ -1,13 +1,15 @@
 
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
     stages {
-        stage('cypress parallel tests') {
-            stage('build') {
+        stage('build') {
                     steps {
                         bat 'npm install'
                     }
-            }
+        }
+
+        stage('cypress parallel tests') {
             parallel {
                 stage('tester A') {
                     steps {
