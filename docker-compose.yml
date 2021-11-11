@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  cypress-test:
+    image: cypress_compose
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./dockerReports/:/app/allure-report
+      - ./dockerReports/:/app/allure-results
